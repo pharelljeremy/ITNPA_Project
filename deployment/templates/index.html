@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Researchly Research Abstract Classifier</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; background: #f5f5f5; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .subtitle { color: #7f8c8d; margin-bottom: 30px; }
+        label { font-weight: bold; color: #34495e; }
+        textarea { width: 100%; height: 220px; padding: 12px; font-family: Arial; font-size: 14px; border: 1px solid #bdc3c7; border-radius: 4px; box-sizing: border-box; resize: vertical; }
+        button { background: #3498db; color: white; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px; border-radius: 4px; margin-top: 10px; }
+        button:hover { background: #2980b9; }
+        .prediction { margin-top: 30px; padding: 20px; background: #e8f5e9; border-left: 4px solid #4caf50; border-radius: 4px; }
+        .prediction h3 { margin-top: 0; color: #2e7d32; }
+        .prediction strong { color: #1b5e20; font-size: 18px; text-transform: capitalize; }
+    </style>
+</head>
+<body>
+    <h1>Researchly Research Abstract Classifier</h1>
+    <p class="subtitle">This app classifies research abstracts as either AI-related or classical research.</p>
+    <form method="POST">
+        <label for="abstract">Enter research abstract:</label><br><br>
+        <textarea id="abstract" name="abstract" placeholder="Paste your research abstract here...">{{ abstract }}</textarea><br>
+        <button type="submit">Classify Abstract</button>
+    </form>
+    {% if prediction %}
+    <div class="prediction">
+        <h3>Prediction</h3>
+        <p>The abstract is classified as: <strong>{{ prediction }}</strong></p>
+    </div>
+    {% endif %}
+</body>
+</html>
